@@ -3,6 +3,7 @@ package main.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import spring.*;
+import sun.misc.Version;
 
 @Configuration // spring 설정 클래스를 의미하는 어노테이션
 public class AppCtx {
@@ -35,5 +36,12 @@ public class AppCtx {
         infoPrinter.setMemberDao(memberDao());
         infoPrinter.setPrinter(memberPrinter());
         return infoPrinter;
+    }
+    @Bean
+    public VersionPrinter versionPrinter(){
+        VersionPrinter versionPrinter = new VersionPrinter();
+        versionPrinter.setMajorVersion(5);
+        versionPrinter.setMinorVersion(0);
+        return versionPrinter;
     }
 }
