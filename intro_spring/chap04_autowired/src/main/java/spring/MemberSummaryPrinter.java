@@ -1,2 +1,9 @@
-package spring;public class MemberSummaryPrinter {
+package spring;
+
+@Override
+public class MemberSummaryPrinter extends MemberPrinter{
+    @Override
+    public void print(Member member){
+        System.out.println("회원정보 : 이메일=%s, 이름=%s\n", member.getEmail(), member.getName());
+    }
 }
