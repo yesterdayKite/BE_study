@@ -4,6 +4,9 @@ MainForAssembler 클래스와 다른 점 :  Assembler클래스 대신 spring컨�
 
 package main;
 
+import main.config.AppConfImport;
+import main.config.AppConfig1;
+import main.config.AppConfig2;
 import main.config.AppCtx;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -23,7 +26,9 @@ public class MainForSpring {
         // assembler는 직접 객체를 생성하는 반면에
         // AnnotationConfigApplicationContext는 설정파일(AppCtx클래스)로부터 생성할 객체와 의존주입 대상을 정한다.
 
-        ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+        // ctx = new AnnotationConfigApplicationContext(AppCtx.class); // 를설정 클래스가 한개였을때
+        ctx = new AnnotationConfigApplicationContext(AppConfig1.class, AppConfig2.class); // 설정 클래스 두개를 임포트
+        // ctx = new AnnotationConfigApplicationContext(AppConfImport.class); // 설정클래스를 관리/지정하는 클래스 활용하여 임포트
 
         // stdin으로 입력받기
         BufferedReader reader =
