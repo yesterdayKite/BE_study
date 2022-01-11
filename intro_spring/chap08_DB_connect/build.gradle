@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-context:5.0.2.RELEASE'
+    compile 'org.springframework:spring-jdbc:5.0.2.RELEASE'
+    compile 'org.apache.tomcat:tomcat-jdbc:8.5.27'
+    compile 'mysql:mysql-connector-java:5.1.45'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
