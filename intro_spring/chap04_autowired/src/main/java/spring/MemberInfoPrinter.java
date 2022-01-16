@@ -1,9 +1,5 @@
 package spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component("infoPrinter")
 public class MemberInfoPrinter {
     private MemberDao memDao;
     private MemberPrinter printer;
@@ -17,11 +13,11 @@ public class MemberInfoPrinter {
         printer.print(member);
         System.out.println();
     }
-    @Autowired
+
     public void setMemberDao(MemberDao memDao) {
         this.memDao = memDao;
     }
-    @Autowired
+
     public void setPrinter(MemberPrinter printer) {
         this.printer = printer;
     }

@@ -1,12 +1,9 @@
 package spring;
 
-import org.springframework.stereotype.Component;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component // 설정클래스에 bean으로 등록하지 않아도 원하는 클래스를 빈으로 등록할 수 있게 한다.
 public class MemberDao {
 
     private static long nexId = 0;

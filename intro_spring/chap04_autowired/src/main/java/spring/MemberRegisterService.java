@@ -1,14 +1,9 @@
 package spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.time.LocalDateTime;
 
 public class MemberRegisterService {
-    @Autowired
     private MemberDao memberDao;
-
-    public MemberRegisterService(){}
 
     // 생성자를 통해 의존 객체를 전달받는다.
     // 즉, 생성자를 통해 MemberRegisterService가 의존하고 있는 MemberDao객체를 주입받은 것이다.
