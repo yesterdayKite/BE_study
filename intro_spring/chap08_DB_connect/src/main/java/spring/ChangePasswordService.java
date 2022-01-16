@@ -1,10 +1,13 @@
 package spring;
 
+import org.springframework.transaction.annotation.Transactional;
+
 public class ChangePasswordService {
 
     private MemberDao memberDao;
 
     // 비밀번호 변경
+    @Transactional // 여러 쿼리를 원자적으로 실행하기 위함
     public void changePassword(String email, String oldPwd, String newPwd){
         Member member = memberDao.selectByEmail(email); // email로 해당 멤버를 검색한다
 

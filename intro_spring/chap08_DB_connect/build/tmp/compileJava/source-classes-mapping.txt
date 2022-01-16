@@ -12,8 +12,8 @@ spring/MemberPrinter.java
  spring.MemberPrinter
 spring/MemberNotFoundException.java
  spring.MemberNotFoundException
-config/AppCtx.java
- config.AppCtx
+spring/MemberRegisterService.java
+ spring.MemberRegisterService
 spring/MemberDao.java
  spring.MemberDao
  spring.MemberDao$1
@@ -23,9 +23,13 @@ spring/MemberListPrinter.java
  spring.MemberListPrinter
 spring/MemberInfoPrinter.java
  spring.MemberInfoPrinter
-spring/MemberRegisterService.java
- spring.MemberRegisterService
 spring/ChangePasswordService.java
  spring.ChangePasswordService
+config/AppCtx.java
+ config.AppCtx
+main/Main.java
+ main.Main
+spring/MainForCPS.java
+ spring.MainForCPS
 main/MainForMemberDao.java
  main.MainForMemberDao
