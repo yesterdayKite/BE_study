@@ -2,6 +2,7 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,11 +50,18 @@ public class RegisterController {
 
     // /register/step3
     @PostMapping("/register/step3")
-    public String handleStep3(RegisterRequest regReq){
+    public String handleStep3(RegisterRequest regReq, Errors errors){ // 스프링 MVC는 handleStep3() 메서드를 호출할때 커맨드 객체와 연결된 Errors 객체를 생성해서 파라미터로 전달한다.
+
+        // 에러탐지
+        new RegisterRequestValidator().validate(regReq, errors);
+        if (errors.hasErrors())
+            return "register/step2";
+
         try{
             memberRegisterService.regist(regReq); // 회원가입
             return "register/step3"; // 성공시 Step3로
         } catch(DuplicateMemberException ex){ // 이미 동일한 이메일 주소를 가진 회원 데이터가 존재하면
+            errors.rejectValue("email", "duplicate"); // error code
             return "register/step2";  // Step2로 리다엑션
         }
     }
