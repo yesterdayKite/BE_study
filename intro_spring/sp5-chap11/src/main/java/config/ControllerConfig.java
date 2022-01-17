@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import spring.MemberRegisterService;
-import sun.jvm.hotspot.asm.Register;
 
 @Configuration
 public class ControllerConfig {

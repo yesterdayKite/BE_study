@@ -1,5 +1,5 @@
-config/MemberConfig.java
- config.MemberConfig
+config/ControllerConfig.java
+ config.ControllerConfig
 spring/MemberDao.java
  spring.MemberDao
  spring.MemberDao$1
@@ -11,17 +11,17 @@ spring/RegisterRequest.java
  spring.RegisterRequest
 spring/WrongIdPasswordException.java
  spring.WrongIdPasswordException
-config/MvcConfig.java
- config.MvcConfig
 spring/MemberNotFoundException.java
  spring.MemberNotFoundException
-spring/ChangePasswordService.java
- spring.ChangePasswordService
+config/MemberConfig.java
+ config.MemberConfig
+controller/RegisterController.java
+ controller.RegisterController
 spring/DuplicateMemberException.java
  spring.DuplicateMemberException
 spring/MemberRegisterService.java
  spring.MemberRegisterService
-config/ControllerConfig.java
- config.ControllerConfig
-controller/RegisterController.java
- controller.RegisterController
+spring/ChangePasswordService.java
+ spring.ChangePasswordService
+config/MvcConfig.java
+ config.MvcConfig
