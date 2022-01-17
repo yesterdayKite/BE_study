@@ -1,6 +1,7 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,10 +32,12 @@ public class RegisterController {
     public String handleStep2(
             // request의 parameter들이 몇개 안될때 간단하게 구하는 어노테이션.
             // agree 요청 파라미터의 값을 읽어와서 agreeVal 파라미터에 저장한다.
-            @RequestParam(value = "agree" , defaultValue = "false") Boolean agreeVal){
+            @RequestParam(value = "agree" , defaultValue = "false") Boolean agreeVal,
+            Model model){
         if (!agreeVal){
             return "register/step1"; // agree 요청 파라미터의 값이 true가 아니면 "register/step1" 뷰 이름을 리턴
         }
+        model.addAttribute("registerRequest", new RegisterRequest()); // <form:form> 태그를 사용하기 위한 커맨드 객체가 필요. 이를 위해 객체를 모델에 넣어주어서, 태그가 정상동작하도록 한다.
         return "register/step2"; // 요청값이 참이면 "register/step2" 뷰 이름을 리턴
     }
 
