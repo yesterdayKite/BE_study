@@ -1,6 +1,9 @@
 package config;
 
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
@@ -27,4 +30,13 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/main").setViewName("main");
     }
 
+    // message source 설정 추가
+    @Bean
+    public MessageSource messageSource(){
+        ResourceBundleMessageSource ms =
+                new ResourceBundleMessageSource();
+        ms.setBasenames("message.label"); // message 패키지에 속한 label 프로퍼티 파일로부터 메세지를 읽어옴을 설정
+        ms.setDefaultEncoding("UTF-8");
+        return ms;
+    }
 }
